@@ -26,7 +26,7 @@ public class RestApiController {
     @PostMapping("join")
     public String join(@RequestBody User user){
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setRoles("USER");
+        user.setRoles("ROLE_USER");
         userRepository.save(user);
         return "회원가입 완료";
     }
